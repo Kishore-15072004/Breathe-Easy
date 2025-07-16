@@ -1,1 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* Import Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+html, body {
+  @apply antialiased m-0 p-0 min-h-screen;
+  font-family: 'Inter', sans-serif;
+  
+  /* Use CSS variables for background & text color */
+  /* background: var(--page-bg); */
+  color: var(--text-color);
+}
+
+/* Light-mode variables */
+:root {
+  /* --page-bg: url('./images/light-bg.jpg') center/cover no-repeat; */
+  --text-color: #000000;
+}
+
+/* Dark-mode override */
+.dark {
+  /* --page-bg: url('./images/dark-bg.jpg') center/cover no-repeat; */
+  --text-color: #ffffff;
+}
+
+.card {
+  /* Translucent white (60% opacity) */
+  background-color: rgba(255, 255, 255, 0.600) !important;
+  color: inherit;
+
+  /* Rounded corners & shadow */
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+              0 2px 4px -2px rgba(0, 0, 0, 0.1) !important;
+
+  
+  /* Entrance animation */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out forwards;
+
+  /* Transition for hover */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2),
+              0 4px 6px -2px rgba(0, 0, 0, 0.1);
+}
+
+/* Keyframes for entrance animation */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Dark-mode cards: translucent dark gray */
+.dark .card {
+  background-color: rgba(31, 41, 55, 0.500) !important;
+}
+
+/* Weather-box Defaults */
+.weather-box {
+  background-color: rgba(255, 255, 255, 0.600) !important;
+  color: inherit;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1),
+              0 2px 4px -2px rgba(0,0,0,0.1) !important;
+}
+
+/* Dark-mode weather-box */
+.dark .weather-box {
+  background-color: rgba(31, 41, 55, 0.500) !important;
+}
+
+/* AQI value styling */
+.aqi-value {
+  @apply text-black;
+}
+.dark .aqi-value {
+  @apply text-white;
+}
+
+.prediction-page {
+  background-clip: padding-box;
+}
+
+/* Page wrapper */
+.page {
+  @apply max-w-7xl mx-auto;
+}
+
+/* Animated Gradient Overlay */
+.animated-gradient {
+  background: linear-gradient(-45deg, rgba(30,144,255,0.15), rgba(0,196,154,0.15));
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
