@@ -1,1 +1,39 @@
-
+{
+  "pm25": [
+    "Avoid outdoor exercise during peak hours.",
+    "Use air purifiers indoors.",
+    "Wear an N95 mask when going outside.",
+    "Keep windows closed to avoid fine particle entry.",
+    "Check AQI before stepping out."
+  ],
+  "pm10": [
+    "Limit time spent outdoors during dusty weather.",
+    "Keep car windows closed in traffic.",
+    "Vacuum floors with HEPA filters.",
+    "Use indoor air filters to reduce particulate matter."
+  ],
+  "no2": [
+    "Avoid high-traffic areas when walking or jogging.",
+    "Use public transport to reduce emissions.",
+    "Install indoor plants that absorb pollutants.",
+    "Ensure gas stoves are well-ventilated."
+  ],
+  "so2": [
+    "Stay indoors when SO\u2082 levels are high.",
+    "Avoid areas with heavy industrial activity.",
+    "Use exhaust fans in kitchens and bathrooms.",
+    "Keep children and elderly indoors during alerts."
+  ],
+  "co": [
+    "Never run vehicles in a closed garage.",
+    "Ensure proper ventilation when using gas appliances.",
+    "Install a carbon monoxide detector at home.",
+    "Avoid smoking indoors."
+  ],
+  "o3": [
+    "Avoid outdoor activity in the afternoon.",
+    "Check ozone levels before scheduling sports.",
+    "Stay indoors when ozone levels spike.",
+    "Use air conditioning on recirculation mode."
+  ]
+}
