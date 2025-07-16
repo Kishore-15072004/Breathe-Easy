@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Live Location Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    #map {
+      height: 100vh;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+  // Initialize the map with a default view
+  const map = L.map('map').setView([0, 0], 15);
+
+  // Add OpenStreetMap tile layer
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+  }).addTo(map);
+
+  // Marker and circle for user's location
+  let marker = null;
+  let circle = null;
+
+  function onLocationFound(position) {
+    const lat = position.coords.latitude;
+    const lng = position.coords.longitude;
+    const accuracy = position.coords.accuracy;
+
+    // If already set, just update position
+    if (marker) {
+      marker.setLatLng([lat, lng]);
+      circle.setLatLng([lat, lng]);
+      circle.setRadius(accuracy);
+    } else {
+      // Add marker and accuracy circle
+      marker = L.marker([lat, lng]).addTo(map).bindPopup("You are here").openPopup();
+      circle = L.circle([lat, lng], { radius: accuracy }).addTo(map);
+    }
+
+    // Center map on new location
+    map.setView([lat, lng]);
+  }
+
+  function onLocationError(error) {
+    alert("Location access denied or unavailable.");
+    console.error(error);
+  }
+
+  // Watch position to update live
+  if (navigator.geolocation) {
+    navigator.geolocation.watchPosition(onLocationFound, onLocationError, {
+      enableHighAccuracy: true,
+      maximumAge: 0,
+      timeout: 10000,
+    });
+  } else {
+    alert("Geolocation is not supported by your browser.");
+  }
+</script>
+
+</body>
+</html>
