@@ -1,0 +1,28 @@
+import pickle
+from tensorflow.keras.models import model_from_json
+
+# Define the paths to your pickle file and where you want the H5 file saved.
+pickle_path = r"backend\models\lstm_multi_pollutants_model.pkl"
+h5_path = r"backend\models\lstm_multi_pollutants_model.h5"
+
+# Load the pickle file.
+with open(pickle_path, "rb") as f:
+    loaded_obj = pickle.load(f)
+
+# Check what was loaded:
+# Case 1: The pickle file contains the full Keras model.
+# Case 2: The pickle file contains a JSON string representing the model architecture.
+if isinstance(loaded_obj, str):
+    print("Loaded a JSON string from pickle. Reconstructing the model architecture.")
+    model = model_from_json(loaded_obj)
+    # OPTIONAL:
+    # If you have the weights saved separately (for example, in an H5 file),
+    # you can load them here:
+    # model.load_weights(r"backend\models\lstm_model_weights.h5")
+else:
+    print("Loaded a complete Keras model object from pickle.")
+    model = loaded_obj
+
+# Save the model in H5 format. This writes out the architecture, weights, and compile info.
+model.save(h5_path)
+print("Model successfully saved in H5 format at:", h5_path)
