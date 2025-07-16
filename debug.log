@@ -1,0 +1,32 @@
+2025-05-16 00:08:12,679 [DEBUG] Creating converter from 3 to 5
+2025-05-16 00:08:12,910 [WARNING] Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-05-16 00:08:12,926 [DEBUG] Models and scalers loaded.
+2025-05-16 00:08:12,943 [WARNING]  * Debugger is active!
+2025-05-16 00:08:12,950 [INFO]  * Debugger PIN: 973-783-313
+2025-05-16 00:08:33,364 [DEBUG] Starting new HTTPS connection (1): ipinfo.io:443
+2025-05-16 00:08:33,364 [DEBUG] Starting new HTTPS connection (1): ipinfo.io:443
+2025-05-16 00:08:33,364 [DEBUG] Starting new HTTPS connection (1): ipinfo.io:443
+2025-05-16 00:08:35,196 [DEBUG] https://ipinfo.io:443 "GET /json HTTP/11" 200 None
+2025-05-16 00:08:35,197 [DEBUG] https://ipinfo.io:443 "GET /json HTTP/11" 200 None
+2025-05-16 00:08:35,197 [DEBUG] https://ipinfo.io:443 "GET /json HTTP/11" 200 None
+2025-05-16 00:08:35,206 [DEBUG] Location determined: lat=17.384, lon=78.4564, city=Hyderābād
+2025-05-16 00:08:35,207 [DEBUG] Location determined: lat=17.384, lon=78.4564, city=Hyderābād
+2025-05-16 00:08:35,207 [DEBUG] Location determined: lat=17.384, lon=78.4564, city=Hyderābād
+2025-05-16 00:08:35,209 [DEBUG] Historical data generated.
+2025-05-16 00:08:35,213 [INFO] 127.0.0.1 - - [16/May/2025 00:08:35] "GET /history-aqi HTTP/1.1" 200 -
+2025-05-16 00:08:35,213 [DEBUG] Computed AQI: {'PM2.5': 120.25, 'PM10': 15.363636363636362, 'NO2': 5.0, 'SO2': 95.125, 'CO': 500, 'Ozone': 2.909090909090909}; Overall AQI: 500
+2025-05-16 00:08:35,214 [DEBUG] Starting new HTTP connection (1): api.openweathermap.org:80
+2025-05-16 00:08:35,215 [DEBUG] Demo Live-AQI (random values): {'AQI': 500, 'pollutants': {'PM2.5': 43.6, 'PM10': 16.9, 'NO2': 5.4, 'SO2': 72.1, 'CO': 49.5, 'Ozone': 3.2}, 'individual_AQI': {'PM2.5': 120.25, 'PM10': 15.363636363636362, 'NO2': 5.0, 'SO2': 95.125, 'CO': 500, 'Ozone': 2.909090909090909}, 'city': 'Hyderābād', 'lat': 17.384, 'lon': 78.4564}
+2025-05-16 00:08:35,217 [INFO] 127.0.0.1 - - [16/May/2025 00:08:35] "GET /live-aqi HTTP/1.1" 200 -
+2025-05-16 00:08:35,220 [DEBUG] Historical data generated.
+2025-05-16 00:08:35,223 [INFO] 127.0.0.1 - - [16/May/2025 00:08:35] "GET /history-aqi HTTP/1.1" 200 -
+2025-05-16 00:08:35,226 [DEBUG] Computed AQI: {'PM2.5': 184.94736842105263, 'PM10': 99.4, 'NO2': 12.962962962962964, 'SO2': 33.47222222222222, 'CO': 176.66666666666666, 'Ozone': 158.75}; Overall AQI: 184.94736842105263
+2025-05-16 00:08:35,227 [DEBUG] Demo Live-AQI (random values): {'AQI': 184.94736842105263, 'pollutants': {'PM2.5': 121.9, 'PM10': 153.8, 'NO2': 14.0, 'SO2': 24.1, 'CO': 14.1, 'Ozone': 89.5}, 'individual_AQI': {'PM2.5': 184.94736842105263, 'PM10': 99.4, 'NO2': 12.962962962962964, 'SO2': 33.47222222222222, 'CO': 176.66666666666666, 'Ozone': 158.75}, 'city': 'Hyderābād', 'lat': 17.384, 'lon': 78.4564}
+2025-05-16 00:08:35,229 [INFO] 127.0.0.1 - - [16/May/2025 00:08:35] "GET /live-aqi HTTP/1.1" 200 -
+2025-05-16 00:08:36,529 [DEBUG] http://api.openweathermap.org:80 "GET /data/2.5/air_pollution/forecast?lat=17.384&lon=78.4564&appid=97b8e6665b7c483d3420767e03d09215 HTTP/11" 200 13609
+2025-05-16 00:08:36,837 [DEBUG] Forecast data retrieved.
+2025-05-16 00:08:36,843 [INFO] 127.0.0.1 - - [16/May/2025 00:08:36] "GET /forecast-aqi HTTP/1.1" 200 -
+2025-05-16 00:08:36,856 [DEBUG] Starting new HTTP connection (1): api.openweathermap.org:80
+2025-05-16 00:08:38,575 [DEBUG] http://api.openweathermap.org:80 "GET /data/2.5/air_pollution/forecast?lat=17.384&lon=78.4564&appid=97b8e6665b7c483d3420767e03d09215 HTTP/11" 200 13609
+2025-05-16 00:08:38,886 [DEBUG] Forecast data retrieved.
+2025-05-16 00:08:38,891 [INFO] 127.0.0.1 - - [16/May/2025 00:08:38] "GET /forecast-aqi HTTP/1.1" 200 -
